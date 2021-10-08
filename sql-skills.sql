@@ -65,3 +65,57 @@ SELECT al.title, ar.name
 FROM album al
 JOIN artist ar ON ar.artist_id = al.artist_id
 
+-- Extra Credit
+-- Artist Table
+-- Problem 1
+SELECT * FROM artist
+ORDER BY name DESC LIMIT 10;
+
+-- Problem 2
+SELECT * FROM artist
+WHERE name LIKE 'Black%';
+
+-- Problem 3
+SELECT * FROM artist
+WHERE name LIKE '%Black%';
+
+-- Employee Table
+-- Problem 1
+SELECT MAX(birth_date) FROM employee;
+
+-- Problem 2
+SELECT MIN(birth_date) FROM employee;
+
+-- Invoice Table
+-- Problem 1
+SELECT COUNT(*) FROM invoice
+WHERE billing_state IN ('CA', 'TX', 'AZ');
+
+-- Problem 2
+SELECT AVG(total) FROM invoice;
+
+-- More Join Queries
+-- Problem 1
+SELECT pt.track_id
+FROM playlist_track pt
+JOIN playlist p ON p.playlist_id = pt.playlist_id
+WHERE p.name = 'Music';
+
+-- Problem 2
+SELECT t.name
+FROM track t
+JOIN playlist_track pt ON pt.track_id = t.track_id
+WHERE pt.playlist_id = 5;
+
+-- Problem 3
+SELECT t.name, p.name
+FROM track t
+JOIN playlist_track pt ON pt.track_id = t.track_id
+JOIN playlist p ON p.playlist_id = pt.playlist_id;
+
+-- Problem 4
+SELECT t.name, a.title
+FROM track t
+JOIN album a ON a.album_id = t.album_id
+JOIN genre g on g.genre_id = t.genre_id
+WHERE g.name = 'Alternative & Punk';
