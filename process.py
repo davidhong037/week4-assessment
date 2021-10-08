@@ -6,9 +6,9 @@ log_file = open("um-server-01.txt")
 # def sales_reports(log_file):
 # defining a function 'sales_reports' that's calling in the log_file
 # variable which is set to the open function.
-for line in log_file:
+# for line in log_file:
 # running a for loop within log_file list
-        line = line.rstrip().split(' ')
+        # line = line.rstrip().split(' ')
         # print(line)
 # returns a string value with the trailing characters like '\n' removed 
         # day = line[0:3]
@@ -18,11 +18,11 @@ for line in log_file:
 # # using if statement to see if the condition of day == "Tue" is true
 #             print(line)
 # prints all the lines that pertains to "Tue" to the terminal
-        for value in line:
-            if value == line[2]:
-             total = int(line[2])
-             total > 10
-             print(line)
+for line in log_file:
+    line = line.rstrip().split(' ')
+    total = int(line[2])
+    if total > 10:
+        print(line)
         
 
 
